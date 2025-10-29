@@ -32,10 +32,6 @@
 #define VSYNC_DEV_MIDDLE2  "platform/exynos-sysmmu.30/exynos-sysmmu.11/"
 #endif
 
-#define HDMI_RESERVE_MEM_DEV_NAME "/sys/class/ion_cma/ion_video_ext/isolated"
-#define SMEM_PATH "/dev/s5p-smem"
-#define SECMEM_IOC_SET_VIDEO_EXT_PROC   _IOWR('S', 13, int)
-
 #define HWC_VERSION HWC_DEVICE_API_VERSION_1_5
 
 #define DUAL_VIDEO_OVERLAY_SUPPORT
@@ -79,22 +75,14 @@ inline void fimd_bw_overlap_limits_init(int xres, int yres,
 const size_t GSC_DST_W_ALIGNMENT_RGB888 = 16;
 const size_t GSC_DST_CROP_W_ALIGNMENT_RGB888 = 1;
 const size_t GSC_W_ALIGNMENT = 16;
-const size_t GSC_H_ALIGNMENT = 14;
+const size_t GSC_H_ALIGNMENT = 16;
 const size_t GSC_DST_H_ALIGNMENT_RGB888 = 1;
-
 const size_t FIMD_GSC_IDX = 0;
 const size_t FIMD_GSC_SEC_IDX = 1;
-const size_t FIMD_EXT_MPP_IDX = 0;
 /* HDMI_GSC_IDX is not used but added for build issue */
 const size_t HDMI_GSC_IDX = 2;
-const size_t HDMI_EXT_MPP_IDX = 2;
-
-const size_t WFD_EXT_MPP_IDX = 1;
-
 #ifdef USES_VIRTUAL_DISPLAY
 const size_t WFD_GSC_IDX = 3;
-#else
-const size_t WFD_GSC_DRM_IDX = 3;
 #endif
 const int FIMD_GSC_USAGE_IDX[] = {FIMD_GSC_IDX, FIMD_GSC_SEC_IDX};
 #ifdef USES_VIRTUAL_DISPLAY
@@ -102,19 +90,5 @@ const int AVAILABLE_GSC_UNITS[] = { 0, 1, 1, 1 };
 #else
 const int AVAILABLE_GSC_UNITS[] = { 0, 1, 1, 5 };
 #endif
-
-#define MPP_VG          0
-#define MPP_VGR         2
-#define MPP_MSC         4
-#define MPP_MSC_1	5
-
-#define EXTERNAL_MPPS   2
-
-struct exynos_mpp_t {
-    int type;
-    unsigned int index;
-};
-
-const exynos_mpp_t AVAILABLE_EXTERNAL_MPP_UNITS[] = {{MPP_MSC, 0}, {MPP_MSC_1, 0} };
 
 #endif
