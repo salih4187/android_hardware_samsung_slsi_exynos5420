@@ -82,7 +82,7 @@ const size_t FIMD_GSC_SEC_IDX = 1;
 /* HDMI_GSC_IDX is not used but added for build issue */
 const size_t HDMI_GSC_IDX = 2;
 #ifdef USES_VIRTUAL_DISPLAY
-const size_t WFD_GSC_IDX = 3;
+const size_t WFD_GSC_IDX = 1;
 #endif
 const int FIMD_GSC_USAGE_IDX[] = {FIMD_GSC_IDX, FIMD_GSC_SEC_IDX};
 #ifdef USES_VIRTUAL_DISPLAY
