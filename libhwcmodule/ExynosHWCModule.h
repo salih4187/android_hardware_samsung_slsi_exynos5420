@@ -84,10 +84,10 @@ const size_t HDMI_GSC_IDX = 2;
 #ifdef USES_VIRTUAL_DISPLAY
 const size_t WFD_GSC_IDX = 3;
 #endif
-//const int FIMD_GSC_USAGE_IDX[] = {FIMD_GSC_IDX, FIMD_GSC_SEC_IDX};
+#const int FIMD_GSC_USAGE_IDX[] = {FIMD_GSC_IDX, FIMD_GSC_SEC_IDX};
 const int FIMD_GSC_USAGE_IDX[] = {FIMD_GSC_IDX};
 #ifdef USES_VIRTUAL_DISPLAY
-//const int AVAILABLE_GSC_UNITS[] = { 0, 1, 1, 1 };
+#const int AVAILABLE_GSC_UNITS[] = { 0, 1, 1, 1 };
 const int AVAILABLE_GSC_UNITS[] = { 0, 1};
 #else
 const int AVAILABLE_GSC_UNITS[] = { 0, 1, 1, 5 };
